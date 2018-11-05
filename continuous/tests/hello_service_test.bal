@@ -7,7 +7,7 @@ documentation {
 @test:BeforeSuite
 function beforeSuiteFunc () {
     io:println("Start the Service!");
-    boolean status = test:startServices("btest");
+    boolean status = test:startServices("continuous");
 }
 
 documentation {
@@ -25,5 +25,5 @@ documentation {
 @test:AfterSuite
 function afterSuiteFunc () {
     io:println("Stop the service!");
-    test:stopServices("btest");
+    test:stopServices("continuous");
 }

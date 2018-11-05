@@ -5,24 +5,24 @@ steps:
     image: rpbo/ballerina
     fail_fast: true
     commands:
-    - ballerina build btest || cat ballerina-internal.log
+    - ballerina build continuous || cat ballerina-internal.log
   unit_test:
     title: Testerina Tests.
     image: rpbo/ballerina
     commands:
     - ballerina init
-    - ballerina test btest
+    - ballerina test continuous 
   build_Image:
     title: Build image
     type: build
-    image_name: pzfreo/btest
-    working_directory: ./target/btest/
+    image_name: sameera/ballerina-continuous
+    working_directory: ./target/continuous/
     tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
     dockerfile: Dockerfile
     no_cache: true
     no_cf_cache: true
   push_Image:
-    image_name: pzfreo/btest
+    image_name: sameera/ballerina-continuous 
     type: push
     candidate: ${{build_Image}}
     tag: latest

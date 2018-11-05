@@ -6,7 +6,7 @@ endpoint http:Listener listener {
 };
 
 @docker:Config {
-    name: "pzfreo/btest" ,
+    name: "sameera/ballerina-continuous" ,
     buildImage: false
 }
 @http:ServiceConfig {
@@ -18,6 +18,6 @@ service<http:Service> hello bind listener {
     }
     
     hi (endpoint caller, http:Request request) {
-        _ = caller -> respond("Hello CNCF!\n");
+        _ = caller -> respond("Hello, World!\n");
     }
 }
