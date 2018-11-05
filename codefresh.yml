@@ -7,7 +7,7 @@ steps:
     commands:
     - ballerina build continuous || cat ballerina-internal.log
   unit_test:
-    title: Testerina Tests.
+    title: Run tests
     image: rpbo/ballerina
     commands:
     - ballerina init
